@@ -39,8 +39,7 @@ fn multi_threaded_counter_mutex(file_paths: Vec<&str>) -> HashMap<String, usize>
         handle.join().unwrap();
     }
 
-    let result = shared_counter.lock().unwrap().clone();
-    result
+    shared_counter.lock().unwrap().clone()
 }
 
 fn main() {
