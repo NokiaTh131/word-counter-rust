@@ -48,7 +48,7 @@ fn main() {
     let word_count = multi_threaded_counter_mutex(file_paths);
     let duration = start.elapsed();
 
-    println!("Word count completed in: {:?}", duration);
+    println!("Word count completed in: {duration:?}");
     println!("Total unique words: {}", word_count.len());
 
     // Print the top 10 words
@@ -57,6 +57,6 @@ fn main() {
 
     println!("\nTop 10 words:");
     for (word, count) in top_words.iter().take(10) {
-        println!("{}: {}", word, count);
+        println!("{word}: {count}");
     }
 }
